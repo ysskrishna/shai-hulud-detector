@@ -1,7 +1,7 @@
 [project]
 name = "shai-hulud-detector"
 version = "1.0.0"
-description = "A CLI tool to scan GitHub users and organizations for shai-hulud compromise."
+description = "A CLI tool to detect potential Shai Hulud npm-worm compromises in GitHub users and organizations."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [

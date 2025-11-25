@@ -4,25 +4,35 @@
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
 
-A CLI tool to scan GitHub users and organizations for shai-hulud compromise detection.
+A CLI tool to detect potential Shai Hulud npm-worm compromises in GitHub users and organizations.
 
-## Description
+## What is Shai Hulud?
 
-Shai Hulud Detector is a security scanning tool that checks GitHub users and organization members for signs of compromise by scanning repository descriptions for Sha1-Hulud: The Second Coming. Shai Hulud is a self-replicating npm worm that spreads through compromised developer environments. It has been responsible for significant supply-chain attacks targeting major npm packages. 
+Shai Hulud is a self-replicating npm worm that spreads through compromised developer systems,
+infecting GitHub repositories and injecting malicious code.  
+It has already been linked to multiple global supply-chain attacks targeting major npm libraries.
+
+This tool scans for known indicators of compromise (IOCs), including:
+
+- Suspicious repository descriptions containing  
+  **`"Sha1-Hulud: The Second Coming."`**
+- Presence of suspicious JSON files containing secrets, credentials or environment configuration
 
 
 ## Features
 
 - Scan individual GitHub users
 - Scan all members of a GitHub organization
+- Dual detection methods: repository description patterns and suspicious file detection
 - Concurrent scanning with configurable workers
-- Color-coded output for easy identification
-- Support for GitHub Personal Access Tokens
+- Color-coded output for easy identification (FLAG/OKAY/ERROR status)
+- Detailed verbose mode
 
 ## Requirements
 
 - Python 3.11+
 - uv package manager (https://docs.astral.sh/uv/)
+- GitHub Personal Access Token (https://github.com/settings/tokens)
 
 ## Installation
 
@@ -39,33 +49,38 @@ cd shai-hulud-detector
 uv sync
 ```
 
+### Authentication Options
+
+Environment variable (recommended):
+
+```bash
+export GITHUB_TOKEN=<GITHUB_TOKEN_HERE>
+uv run python main.py scan <USERNAME_HERE>
+```
+
+Command-line flag:
+```bash
+uv run python main.py scan <USERNAME_HERE> --token <GITHUB_TOKEN_HERE>
+```
+
+If omitted, the tool exits with a clear warning.
+
+
 ## Usage
 
 ### Scan one or more users
 
 ```bash
-uv run python main.py scan username1
-uv run python main.py scan username1 username2 username3
+uv run python main.py scan <USERNAME_HERE>
+uv run python main.py scan <USERNAME_HERE1> <USERNAME_HERE2> <USERNAME_HERE3>
 ```
 
 ### Scan all members of an organization
 
 ```bash
-uv run python main.py scan --org organizationname
+uv run python main.py scan --org <ORGANIZATION_NAME_HERE>
 ```
 
-### Authentication
-
-- **Command-line**: `--token GITHUB_TOKEN_HERE`
-- **Environment**:
-    ```bash
-    export GITHUB_TOKEN=your_token_here
-    uv run python main.py scan alice
-    ```
-
-**Note:** Without a token, the tool uses anonymous access which has lower rate limits.
-
-**Note:** Without a token, GitHub rate limits are much lower.
 
 ### Help
 ```bash
@@ -76,24 +91,23 @@ uv run python main.py scan --help
 
 Set concurrency (default 5):
 ```bash
-uv run python main.py scan --workers 10 username1 username2
+uv run python main.py scan --org <ORGANIZATION_NAME_HERE> --workers 10
 ```
 
 ### Verbose Output
-
-Use the `--verbose` flag to see detailed scanning information including repository counts and progress:
 ```bash
-uv run python main.py scan username1 --verbose
+uv run python main.py scan <USERNAME_HERE> --verbose
 ```
 
 
 ### Recommended Actions
 
-If you detect a compromise:
+If you detect a compromise (FLAG status):
 - Rotate **all** GitHub, npm, cloud, and CI/CD secrets
+- Enforce MFA on GitHub & npm accounts
 - Check GitHub for repositories with the description "Sha1-Hulud: The Second Coming."
+- Review and remove any suspicious files found (e.g., `secrets.json`, `credentials.json`, etc.)
 - Disable npm `postinstall` scripts in CI where possible
-- Pin package versions and enforce MFA on GitHub and npm accounts
 - Audit all npm dependencies and versions
 
 ### References
