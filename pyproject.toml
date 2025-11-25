@@ -1,10 +1,40 @@
 [project]
 name = "shai-hulud-detector"
 version = "1.0.0"
-description = "Shai Hulud Detector"
+description = "A CLI tool to scan GitHub users and organizations for shai-hulud compromise."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = [
-    "typer>=0.9.0",
-    "PyGithub>=2.1.0",
+authors = [
+  {name = "ysskrishna", email = "sivasaikrishnassk@gmail.com"}
 ]
+license = {text = "MIT"}
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "Topic :: Security",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities"
+]
+keywords = ["github", "security", "scanner", "compromise", "detection", "cli", "typer"]
+dependencies = [
+  "typer>=0.9.0",
+  "PyGithub>=2.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ysskrishna/shai-hulud-detector"
+Documentation = "https://github.com/ysskrishna/shai-hulud-detector#readme"
+Repository = "https://github.com/ysskrishna/shai-hulud-detector.git"
+Issues = "https://github.com/ysskrishna/shai-hulud-detector/issues"
+
+[tool.internalurls]
+author_username = "ysskrishna"
+author_name = "Y. Siva Sai Krishna"
+author_github = "https://github.com/ysskrishna"
+author_linkedin = "https://linkedin.com/in/ysskrishna"
