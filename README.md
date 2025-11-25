@@ -8,7 +8,7 @@ A CLI tool to scan GitHub users and organizations for shai-hulud compromise dete
 
 ## Description
 
-Shai Hulud Detector is a security scanning tool that checks GitHub users and organization members for signs of compromise by scanning repository descriptions for the string "Sha1-Hulud: The Second Coming". Shai Hulud is a self-replicating npm worm that spreads through compromised developer environments. It has been responsible for significant supply-chain attacks targeting major npm packages. 
+Shai Hulud Detector is a security scanning tool that checks GitHub users and organization members for signs of compromise by scanning repository descriptions for the string "Sha1-Hulud: The Second Coming.". Shai Hulud is a self-replicating npm worm that spreads through compromised developer environments. It has been responsible for significant supply-chain attacks targeting major npm packages. 
 
 
 ## Features
