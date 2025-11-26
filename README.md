@@ -122,15 +122,15 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Development
 
-For development setup, building, and contributing, see [DEVELOPMENT.md](DEVELOPMENT.md).
+For development setup, building, and contributing, see [DEVELOPMENT.md](https://github.com/ysskrishna/shai-hulud-detector/blob/main/DEVELOPMENT.md).
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for a detailed list of changes and version history.
+See [CHANGELOG.md](https://github.com/ysskrishna/shai-hulud-detector/blob/main/CHANGELOG.md) for a detailed list of changes and version history.
 
 ## Releases
 
-For information on the release process and how to create new releases, see [RELEASE.md](RELEASE.md).
+For information on the release process and how to create new releases, see [RELEASE.md](https://github.com/ysskrishna/shai-hulud-detector/blob/main/RELEASE.md).
 
 ## Contributing
 
