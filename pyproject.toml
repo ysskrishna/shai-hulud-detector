@@ -40,6 +40,9 @@ Documentation = "https://github.com/ysskrishna/shai-hulud-detector#readme"
 Repository = "https://github.com/ysskrishna/shai-hulud-detector.git"
 Issues = "https://github.com/ysskrishna/shai-hulud-detector/issues"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
 [tool.internalurls]
 author_username = "ysskrishna"
 author_name = "Y. Siva Sai Krishna"
