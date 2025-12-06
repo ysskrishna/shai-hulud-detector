@@ -4,9 +4,9 @@
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 [![PyPI](https://img.shields.io/pypi/v/shai-hulud-detector)](https://pypi.org/project/shai-hulud-detector/)
 
-
-
 A CLI tool to detect potential Shai Hulud npm-worm compromises in GitHub users and organizations.
+
+![OG Image](media/og.png)
 
 ## What is Shai Hulud?
 
@@ -19,7 +19,6 @@ This tool scans for known indicators of compromise (IOCs), including:
 - Suspicious repository descriptions containing  
   **`"Sha1-Hulud: The Second Coming."`**
 - Presence of suspicious JSON files containing secrets, credentials or environment configuration
-
 
 ## Features
 
@@ -75,26 +74,29 @@ shai-hulud-detector scan <USERNAME_HERE> --token <GITHUB_TOKEN_HERE>
 ```
 
 ### Help
+
 ```bash
-shai-hulud-detector scan --help 
-``` 
+shai-hulud-detector scan --help
+```
 
 ### Parallelism
 
 Set concurrency (default 5):
+
 ```bash
 shai-hulud-detector scan --org <ORGANIZATION_NAME_HERE> --workers 10
 ```
 
 ### Verbose Output
+
 ```bash
 shai-hulud-detector scan <USERNAME_HERE> --verbose
 ```
 
-
 ### Recommended Actions
 
 If you detect a compromise (FLAG status):
+
 - Rotate **all** GitHub, npm, cloud, and CI/CD secrets
 - Enforce MFA on GitHub & npm accounts
 - Check GitHub for repositories with the description "Sha1-Hulud: The Second Coming."
@@ -105,6 +107,7 @@ If you detect a compromise (FLAG status):
 ### References
 
 For more detailed information about Shai Hulud attacks, see:
+
 - [HelixGuard: Malicious Sha1Hulud Analysis](https://helixguard.ai/blog/malicious-sha1hulud-2025-11-24)
 - [Aikido Security: Shai Hulud Strikes Again](https://www.aikido.dev/blog/shai-hulud-strikes-again-hitting-zapier-ensdomains)
 - [Wiz: Shai Hulud 2.0 Ongoing Supply Chain Attack](https://www.wiz.io/blog/shai-hulud-2-0-ongoing-supply-chain-attack)
