@@ -1,9 +1,10 @@
 # Shai Hulud Detector
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ysskrishna/shai-hulud-detector/blob/main/LICENSE)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 [![PyPI](https://img.shields.io/pypi/v/shai-hulud-detector)](https://pypi.org/project/shai-hulud-detector/)
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/shai-hulud-detector?period=total&units=INTERNATIONAL_SYSTEM&left_color=GREY&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/shai-hulud-detector)
+[![Author site](https://img.shields.io/badge/author-ysskrishna.space-informational)](https://ysskrishna.space)
 [![Context7](https://img.shields.io/badge/Context7-docs-18181B)](https://context7.com/ysskrishna/shai-hulud-detector)
 [![Ask DeepWiki](https://img.shields.io/badge/DeepWiki-ask-18181B)](https://deepwiki.com/ysskrishna/shai-hulud-detector)
 
@@ -57,32 +58,55 @@ Or pass it via command-line flag (see Usage section below). If omitted, the tool
 
 ## Usage
 
-### Scan one or more users
+<a id="scan-one-or-more-users"></a>
+
+<details>
+<summary><b>Scan one or more users</b></summary>
 
 ```bash
 shai-hulud-detector scan <USERNAME_HERE>
 shai-hulud-detector scan <USERNAME_HERE1> <USERNAME_HERE2> <USERNAME_HERE3>
 ```
 
-### Scan all members of an organization
+</details>
+
+<a id="scan-all-members-of-an-organization"></a>
+
+<details>
+<summary><b>Scan all members of an organization</b></summary>
 
 ```bash
 shai-hulud-detector scan --org <ORGANIZATION_NAME_HERE>
 ```
 
-### Authentication via command-line
+</details>
+
+<a id="authentication-via-command-line"></a>
+
+<details>
+<summary><b>Authentication via command-line</b></summary>
 
 ```bash
 shai-hulud-detector scan <USERNAME_HERE> --token <GITHUB_TOKEN_HERE>
 ```
 
-### Help
+</details>
+
+<a id="help"></a>
+
+<details>
+<summary><b>Help</b></summary>
 
 ```bash
 shai-hulud-detector scan --help
 ```
 
-### Parallelism
+</details>
+
+<a id="parallelism"></a>
+
+<details>
+<summary><b>Parallelism</b></summary>
 
 Set concurrency (default 5):
 
@@ -90,13 +114,23 @@ Set concurrency (default 5):
 shai-hulud-detector scan --org <ORGANIZATION_NAME_HERE> --workers 10
 ```
 
-### Verbose Output
+</details>
+
+<a id="verbose-output"></a>
+
+<details>
+<summary><b>Verbose Output</b></summary>
 
 ```bash
 shai-hulud-detector scan <USERNAME_HERE> --verbose
 ```
 
-### Command reference
+</details>
+
+<a id="command-reference"></a>
+
+<details>
+<summary><b>Command reference</b></summary>
 
 `shai-hulud-detector scan [OPTIONS] [USERNAMES]...`
 
@@ -107,6 +141,8 @@ shai-hulud-detector scan <USERNAME_HERE> --verbose
 | `--token` | `-t` | text | `GITHUB_TOKEN` environment variable | GitHub token |
 | `--workers` | `-w` | integer | `5` | Number of concurrent workers |
 | `--verbose` | `-v` | flag | off | Show verbose output, including repository counts |
+
+</details>
 
 ### Recommended Actions
 
@@ -127,24 +163,9 @@ For more detailed information about Shai Hulud attacks, see:
 - [Aikido Security: Shai Hulud Strikes Again](https://www.aikido.dev/blog/shai-hulud-strikes-again-hitting-zapier-ensdomains)
 - [Wiz: Shai Hulud 2.0 Ongoing Supply Chain Attack](https://www.wiz.io/blog/shai-hulud-2-0-ongoing-supply-chain-attack)
 
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Author
-
-**Y. Siva Sai Krishna**
-
-- GitHub: [@ysskrishna](https://github.com/ysskrishna)
-- LinkedIn: [ysskrishna](https://linkedin.com/in/ysskrishna)
-
 ## Development
 
 For development setup, building, and contributing, see [DEVELOPMENT.md](https://github.com/ysskrishna/shai-hulud-detector/blob/main/DEVELOPMENT.md).
-
-## Changelog
-
-See [CHANGELOG.md](https://github.com/ysskrishna/shai-hulud-detector/blob/main/CHANGELOG.md) for a detailed list of changes and version history.
 
 ## Releases
 
@@ -154,6 +175,37 @@ For information on the release process and how to create new releases, see [RELE
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Issues
+## Built and maintained by
 
-If you encounter any issues or have feature requests, please open an issue on [GitHub](https://github.com/ysskrishna/shai-hulud-detector/issues).
+Shai Hulud Detector is built and maintained by:
+
+| | Name | GitHub | Role |
+|---|------|--------|------|
+| <img src="https://github.com/ysskrishna.png?size=120" width="60" height="60" alt="Y. Siva Sai Krishna"> | **Y. Siva Sai Krishna** | [@ysskrishna](https://github.com/ysskrishna) | Creator |
+
+## Changelog
+
+See [CHANGELOG](CHANGELOG.md) for release history.
+
+## Support
+
+If you find this library helpful:
+
+- ⭐ Star the repository
+- 🐛 [Report issues](https://github.com/ysskrishna/shai-hulud-detector/issues)
+- 🔀 Submit pull requests
+- 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
+
+## License
+
+MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) — see [LICENSE](LICENSE) for details.
+
+---
+
+<p align="left">
+  <a href="https://github.com/ysskrishna">Author's GitHub</a> •
+  <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
+  <a href="https://ysskrishna.space">Author's site</a> •
+  <a href="https://pypi.org/project/shai-hulud-detector/">Package on PyPI</a> •
+  <a href="https://github.com/ysskrishna/shai-hulud-detector/issues">Report Issues</a>
+</p>
