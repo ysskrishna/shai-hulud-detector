@@ -1,5 +1,7 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
+  "url": "https://context7.com/ysskrishna/shai-hulud-detector",
+  "public_key": "pk_VesXVq9WjBT8ecKU9XIZz",
   "projectTitle": "shai-hulud-detector",
   "description": "Python CLI security scanner that checks GitHub users or organization members for signs of compromise by the Sha1-Hulud npm supply-chain worm.",
   "excludeFolders": [
