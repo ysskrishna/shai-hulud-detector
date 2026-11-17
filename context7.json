@@ -1,0 +1,31 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "shai-hulud-detector",
+  "description": "Python CLI security scanner that checks GitHub users or organization members for signs of compromise by the Sha1-Hulud npm supply-chain worm.",
+  "excludeFolders": [
+    "archive",
+    "archived",
+    "old",
+    "deprecated",
+    "legacy",
+    "tests",
+    ".github",
+    "media"
+  ],
+  "excludeFiles": [
+    "CHANGELOG.md",
+    "changelog.md",
+    "LICENSE.md",
+    "license.md",
+    "CODE_OF_CONDUCT.md",
+    "NEWS.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "AGENTS.md",
+    "DEVELOPMENT.md",
+    "RELEASE.md"
+  ],
+  "rules": [
+    "Run shai-hulud-detector scan <username> or scan --org <org>; pass a GitHub token with --token or the GITHUB_TOKEN environment variable."
+  ]
+}

@@ -94,6 +94,18 @@ shai-hulud-detector scan --org <ORGANIZATION_NAME_HERE> --workers 10
 shai-hulud-detector scan <USERNAME_HERE> --verbose
 ```
 
+### Command reference
+
+`shai-hulud-detector scan [OPTIONS] [USERNAMES]...`
+
+| Option | Short | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `USERNAMES` | | text, one or more | none | GitHub usernames to scan |
+| `--org` | `-o` | text | none | GitHub organization whose members are all scanned |
+| `--token` | `-t` | text | `GITHUB_TOKEN` environment variable | GitHub token |
+| `--workers` | `-w` | integer | `5` | Number of concurrent workers |
+| `--verbose` | `-v` | flag | off | Show verbose output, including repository counts |
+
 ### Recommended Actions
 
 If you detect a compromise (FLAG status):
