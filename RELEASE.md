@@ -70,7 +70,7 @@ git push origin --delete vX.Y.Z
 
 ## 📝 Notes
 
-* Only pushes of tags matching `v*` trigger publishing.
+* Only pushes of tags matching `v*.*.*` trigger publishing. The GitHub Release uses `ysskrishna/changelog-release-action@v1` with the matching nonempty `CHANGELOG.md` section and title `Release <tag>`. Missing or empty notes fail; there is no fallback.
 * Ensure your repository is registered for **trusted publishing** on PyPI.
 * You can verify release status under **GitHub → Actions → Publish**.
 
