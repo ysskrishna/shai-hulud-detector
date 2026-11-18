@@ -3,8 +3,8 @@ name: "Publish"
 on:
   push:
     tags:
-      # Publish on any tag starting with a `v`, e.g., v0.1.0
-      - v*
+      # Publish on full version tags, e.g., v0.1.0
+      - "v*.*.*"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -73,41 +73,4 @@ jobs:
           persist-credentials: false
 
       - name: Create GitHub release from changelog
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          TAG="${GITHUB_REF_NAME}"
-          TITLE="Release ${TAG}"
-
-          if gh release view "$TAG" --json url &>/dev/null; then
-            echo "Release for $TAG already exists; skipping."
-            exit 0
-          fi
-
-          NOTES=""
-          if [ -f CHANGELOG.md ]; then
-            VERSION="${TAG#v}"
-            NOTES="$(awk -v ver="$VERSION" '
-              BEGIN { heading = "## [" ver "]" }
-              index($0, heading) == 1 && (length($0) == length(heading) || substr($0, length(heading) + 1, 1) ~ /[[:space:]]/) { emit = 1; next }
-              emit && /^## / { exit }
-              emit && $0 ~ /^\[[0-9A-Za-z.-]+\]: https?:\/\// { exit }
-              emit { print }
-            ' CHANGELOG.md)"
-          fi
-
-          nonempty() {
-            [ -n "$(printf '%s' "$1" | tr -d '[:space:]')" ]
-          }
-
-          if ! nonempty "$NOTES" && [ "$(git cat-file -t "$TAG" 2>/dev/null || true)" = tag ]; then
-            NOTES="$(git tag -l --format='%(contents)' "$TAG" |
-              sed '/^-----BEGIN PGP SIGNATURE-----$/,/^-----END PGP SIGNATURE-----$/d')"
-          fi
-
-          if nonempty "$NOTES"; then
-            printf '%s\n' "$NOTES" | gh release create "$TAG" --title "$TITLE" --verify-tag --notes-file -
-          else
-            gh release create "$TAG" --title "$TITLE" --verify-tag --generate-notes
-          fi
+        uses: ysskrishna/changelog-release-action@v1
